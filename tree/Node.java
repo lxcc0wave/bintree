@@ -16,13 +16,13 @@ public interface Node {
 	/**
 	 * Returns the left child of node.
 	 *
-	 * @return left child of {@code this} or null if no left child.
+	 * @return left child of {@code this} or {@code null} if no left child.
 	 */
 	Node getLeft();
 	/**
 	 * Returns the right child of node.
 	 *
-	 * @return right child of {@code this} or null if no right child.
+	 * @return right child of {@code this} or {@code null} if no right child.
 	 */
 	Node getRight();
 }
