@@ -1,21 +1,29 @@
 package main;
 
+import tree.Abs;
+import tree.Add;
 import tree.Data;
+import tree.Factorial;
+import tree.Minus;
+import tree.Multiply;
 import tree.Node;
 
 public class Main {
 	public static void main(String[] args){
-		Node n1 = new Data(1);
-		System.out.println("n1.getValue()=" + n1.getValue());
-		if(n1.getLeft() == null){
-			System.out.println("no left child.");
-		} else {
-			System.out.println("n1 has left child.");
-		}
-		if(n1.getRight() == null){
-			System.out.println("no right child.");
-		} else {
-			System.out.println("n1 has right child.");
-		}
+		// -4! + 3 * (2 + 4)
+		Node test = new Add(
+				new Minus(new Factorial(new Data(4))),
+				new Multiply(
+						new Data(3),
+						new Add(
+								new Data(2),
+								new Data(4)
+								)
+						)
+				);
+		test = new Abs(test);
+		System.out.println("Dump:");
+		test.dump(0);
+		System.out.println("Eval:" + test.eval());
 	}
 }
