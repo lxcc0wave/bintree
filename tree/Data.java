@@ -1,10 +1,12 @@
 package tree;
 
+import visitor.NodeVisitor;
+
 /**
  * A leaf that has an {@code int} value.
  *
  * @author lxcc0wave
- * @version 2017.03.14
+ * @version 2017.03.15
  */
 public class Data implements Node{
 	private int value;
@@ -58,5 +60,10 @@ public class Data implements Node{
 	@Override
 	public void dump(int n) {
 		System.out.println(makeIndent(n) + "Data[" + value + "]");
+	}
+
+	@Override
+	public void accept(NodeVisitor v) {
+		v.visit(this);
 	}
 }

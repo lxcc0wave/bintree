@@ -1,10 +1,12 @@
 package tree;
 
+import visitor.NodeVisitor;
+
 /**
  * A node of the absolute value operator |.|.
  *
  * @author lxcc0wave
- * @version 2017.3.14
+ * @version 2017.3.15
  */
 public class Abs extends UnaryOperator {
 	/**
@@ -49,6 +51,10 @@ public class Abs extends UnaryOperator {
 	public void dump(int n) {
 		System.out.println(makeIndent(n) + "Abs");
 		this.getArg().dump(n + 1);
+	}
+	@Override
+	public void accept(NodeVisitor v) {
+		v.visit(this);
 	}
 
 }

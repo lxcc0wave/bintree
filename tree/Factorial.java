@@ -1,10 +1,12 @@
 package tree;
 
+import visitor.NodeVisitor;
+
 /**
  * A node of the factorial "!" operator.
  *
  * @author lxcc0wave
- * @version 2017.3.14
+ * @version 2017.3.15
  */
 public class Factorial extends RightOperator {
 	/**
@@ -47,5 +49,10 @@ public class Factorial extends RightOperator {
 	@Override
 	public String toString(){
 		return "Factorial";
+	}
+
+	@Override
+	public void accept(NodeVisitor v) {
+		v.visit(this);
 	}
 }

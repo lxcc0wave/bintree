@@ -1,10 +1,12 @@
 package tree;
 
+import visitor.NodeVisitor;
+
 /**
  * A node of the operator "+" on integer.
  *
  * @author lxcc0wave
- * @version 2017.3.14
+ * @version 2017.3.15
  */
 public class Add extends BinaryOperator {
 	/**
@@ -46,5 +48,10 @@ public class Add extends BinaryOperator {
 	@Override
 	public String toString(){
 		return "Add";
+	}
+
+	@Override
+	public void accept(NodeVisitor v) {
+		v.visit(this);
 	}
 }

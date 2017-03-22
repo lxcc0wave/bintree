@@ -1,5 +1,7 @@
 package tree;
 
+import visitor.NodeVisitor;
+
 /**
  * A binary tree node that has an {@code int} value.
  *
@@ -49,4 +51,9 @@ public interface Node {
 			acc += "  ";
 		return acc;
 	}
+	/**
+	 * Accept a visitor.
+	 * @param v Visitor
+	 */
+	void accept(NodeVisitor v);
 }

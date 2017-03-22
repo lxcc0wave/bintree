@@ -1,10 +1,12 @@
 package tree;
 
+import visitor.NodeVisitor;
+
 /**
  * A node of the unary "-" operator.
  *
  * @author lxcc0wave
- * @version 2017.3.14
+ * @version 2017.3.15
  */
 public class Minus extends LeftOperator {
 	/**
@@ -43,5 +45,10 @@ public class Minus extends LeftOperator {
 	@Override
 	public String toString(){
 		return "Minus";
+	}
+
+	@Override
+	public void accept(NodeVisitor v) {
+		v.visit(this);
 	}
 }
